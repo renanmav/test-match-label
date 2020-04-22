@@ -8,7 +8,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:          
-      - uses: renanmav/match-label-action@v1
+      - uses: renanmav/match-label-action@v3
         id: label
         with:
           allowed: >

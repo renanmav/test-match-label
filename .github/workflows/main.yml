@@ -1,0 +1,19 @@
+name: main
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened, deleted, labeled, unlabeled]
+    
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:          
+      - uses: renanmav/match-label-action@v1
+        id: label
+        with:
+          allowed: >
+            blogpost
+
+      - name: Echo hello world
+        if: steps.label.outputs.match == 'blogpost'
+        run: echo "Hello world"
